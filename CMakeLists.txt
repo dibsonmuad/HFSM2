@@ -20,7 +20,5 @@ add_custom_command(TARGET hfsm2_test
 				   POST_BUILD
 				   COMMAND hfsm2_test)
 
-if ("x_${CMAKE_BUILD_TYPE}" STREQUAL "x_Coverage")
-	set (TEST_PROJECT hfsm2_test)
-	include (coverage)
-endif ("x_${CMAKE_BUILD_TYPE}" STREQUAL "x_Coverage")
+set (TEST_PROJECT hfsm2_test)
+include (coverage)

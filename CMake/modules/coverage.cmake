@@ -1,5 +1,4 @@
-if (BUILD_COVERAGE)
-  set(CMAKE_BUILD_TYPE "Debug")
+if ("x_${CMAKE_BUILD_TYPE}" STREQUAL "x_Coverage")
   if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
     find_program(GCOV_PATH gcov)
     find_program(GENHTML_PATH genhtml)
@@ -68,4 +67,4 @@ if (BUILD_COVERAGE)
         DEPENDS ${TEST_PROJECT}-ccov-report
         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
     endif(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
-endif(BUILD_COVERAGE)
+endif ("x_${CMAKE_BUILD_TYPE}" STREQUAL "x_Coverage")
