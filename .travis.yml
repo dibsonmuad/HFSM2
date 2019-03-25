@@ -210,4 +210,4 @@ script:
   - make
 
 after_success:
-  - if ["$BUILD_TYPE" -eq "Coverage" ]; then bash <(curl -s https://codecov.io/bash) -f "hfsm2_test.profdata" || echo "Codecov did not collect coverage reports" && coveralls --exclude lib --exclude tests --gcov-options '\-lp'; fi
+  - if [ "$BUILD_TYPE" -eq "Coverage" ]; then bash <(curl -s https://codecov.io/bash) -f "hfsm2_test.profdata" || echo "Codecov did not collect coverage reports" && coveralls --exclude lib --exclude tests --gcov-options '\-lp'; fi
